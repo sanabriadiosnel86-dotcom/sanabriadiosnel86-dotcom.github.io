@@ -87,8 +87,8 @@ h4 { font-size: clamp(25px, 3vw, 37px); }
 .project-nav a:hover { background: var(--tint); }
 .project-group { scroll-margin-top: 24px; margin-block: 30px 42px; }
 .project-group > h3 { margin-bottom: 13px; }
-.case-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
-.case, .education, .credentials article, .contact, .archive {
+.case-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 14px; }
+.case, .education, .credentials article, .archive {
   border: 1px solid var(--line);
   border-radius: 12px;
   background: var(--surface);
@@ -131,13 +131,11 @@ h4 { font-size: clamp(25px, 3vw, 37px); }
 .archive span { color: var(--muted); }
 .archive-actions { display: flex; gap: 12px; color: var(--accent); font-weight: 650; }
 
-.education, .contact { display: grid; grid-template-columns: .95fr 1.05fr; gap: 26px; padding: clamp(19px, 4vw, 42px); }
+.education { display: grid; grid-template-columns: .95fr 1.05fr; gap: 26px; padding: clamp(19px, 4vw, 42px); }
 .education-list { display: grid; gap: 20px; }
 .education-list article + article { padding-top: 18px; border-top: 1px solid var(--line); }
 .education-list h3, .credentials h3 { font-size: 23px; }
-.education-list p:not(.eyebrow), .contact p { margin: 9px 0 0; color: var(--muted); }
-.contact { background: var(--tint); align-items: center; }
-.contact p { margin: 0 0 13px; }
+.education-list p:not(.eyebrow) { margin: 9px 0 0; color: var(--muted); }
 .credentials { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
 .credentials article { padding: 20px; display: flex; flex-direction: column; align-items: start; gap: 12px; }
 .credentials a { margin-top: auto; padding-top: 4px; }
@@ -169,7 +167,7 @@ dialog::backdrop { background: #102820c9; }
   .wrap { width: calc(100% - 32px); }
   .top { align-items: flex-start; flex-direction: column; gap: 9px; }
   .top nav { gap: 8px 13px; }
-  .hero, .case-grid, .education, .contact, .credentials { grid-template-columns: 1fr; }
+  .hero, .case-grid, .education, .credentials { grid-template-columns: 1fr; }
   .hero { gap: 22px; }
   .portrait { width: min(100%, 460px); }
   .portrait img { height: clamp(290px, 88vw, 460px); }
@@ -183,3 +181,33 @@ dialog::backdrop { background: #102820c9; }
 }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+.project-detail { border-top: 1px solid var(--line); padding-top: 12px; }
+.detail-tabs:not([hidden]) { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+.detail-tabs button {
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--accent-dark);
+  font-size: 14px;
+  font-weight: 650;
+  padding: 6px 10px;
+}
+.detail-tabs button[aria-selected="true"] {
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+  color: #fff;
+}
+.detail-panel h5 {
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.3;
+  margin: 0 0 5px;
+}
+.detail-panel p {
+  color: var(--muted);
+  font-size: 16px;
+  margin: 0 0 11px;
+}
+.detail-panel p:last-child { margin-bottom: 0; }
+.detail-panel + .detail-panel:not([hidden]) { margin-top: 14px; }

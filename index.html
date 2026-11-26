@@ -15,9 +15,10 @@
 <title>Diosnel Sanabria · Portafolio</title>
 <link rel="stylesheet" href="style.css">
 <script src="gallery.js" defer></script>
+<script src="project-tabs.js" defer></script>
 </head>
 <body>
-<header class="top wrap"><a class="brand" href="#inicio">Diosnel Sanabria</a><nav aria-label="Navegación"><a href="#proyectos">Proyectos</a><a href="#formacion">Formación</a><a href="#certificaciones">Certificaciones</a><a href="#contacto">Contacto</a></nav></header>
+<header class="top wrap"><a class="brand" href="#inicio">Diosnel Sanabria</a><nav aria-label="Navegación"><a href="#proyectos">Proyectos</a><a href="#formacion">Formación</a><a href="#certificaciones">Certificaciones</a></nav></header>
 <main class="wrap" id="inicio">
 <section class="hero" aria-labelledby="nombre">
 <div class="hero-copy"><p class="eyebrow">Desarrollo de software y ciberseguridad · Paraguay</p>
@@ -48,6 +49,23 @@
       <img loading="lazy" decoding="async" src="project-rastro-financiero.webp" width="1000" height="620" alt="Detección de operaciones, resolución de entidades e investigación con evidencia.">
     </a>
   </figure>
+  <div class="project-detail" data-project-tabs>
+    <div class="detail-tabs" data-tab-list hidden>
+      <button type="button" data-tab="overview">Sobre el proyecto</button>
+      <button type="button" data-tab="local">Leer más información</button>
+    </div>
+    <section class="detail-panel" id="rastro-financiero-overview" data-panel="overview" aria-labelledby="rastro-financiero-overview-title">
+      <h5 id="rastro-financiero-overview-title">Alcance del proyecto</h5>
+      <p>El caso de estudio sigue una alerta de prevención de lavado desde su detección hasta el cierre. La revisión vincula titulares, cuentas y contrapartes para ordenar las operaciones que requieren contexto adicional.</p>
+      <p>El resultado es un expediente con la relación entre entidades, los movimientos relevantes y el fundamento de la decisión del analista.</p>
+    </section>
+    <section class="detail-panel" id="rastro-financiero-local" data-panel="local" aria-labelledby="rastro-financiero-local-title">
+      <h5 id="rastro-financiero-local-title">Beneficio potencial para Paraguay</h5>
+      <p>Bancos y cooperativas paraguayas podrían reunir en un solo expediente movimientos que hoy se revisan en distintas fuentes y dar continuidad a un caso cuando cambia el analista.</p>
+      <h5>Implementación prevista</h5>
+      <p>El piloto empezaría con transacciones en guaraníes anonimizadas o sintéticas, identificadores normalizados y tipologías acordadas con cumplimiento. La revisión humana confirmaría las relaciones y las alertas antes de incorporar el flujo a casos reales. Se medirían el tiempo por expediente y las alertas que terminan sin hallazgo.</p>
+    </section>
+  </div>
 </article>
 <article class="case" id="signal">
   <div class="case-copy">
@@ -75,6 +93,23 @@
   <figcaption>Respuesta de la API</figcaption>
 </figure>
 </div>
+  <div class="project-detail" data-project-tabs>
+    <div class="detail-tabs" data-tab-list hidden>
+      <button type="button" data-tab="overview">Sobre el proyecto</button>
+      <button type="button" data-tab="local">Leer más información</button>
+    </div>
+    <section class="detail-panel" id="signal-overview" data-panel="overview" aria-labelledby="signal-overview-title">
+      <h5 id="signal-overview-title">Alcance del proyecto</h5>
+      <p>La demo parte de una transacción, estima su riesgo con XGBoost y usa SHAP para destacar las variables que más influyeron en esa estimación. El panel y la API muestran la puntuación y su explicación.</p>
+      <p>La salida permite revisar por qué una operación se priorizó y registrar si la alerta aporta valor al análisis.</p>
+    </section>
+    <section class="detail-panel" id="signal-local" data-panel="local" aria-labelledby="signal-local-title">
+      <h5 id="signal-local-title">Beneficio potencial para Paraguay</h5>
+      <p>Una fintech o un procesador de pagos local podría ordenar alertas de fraude según su riesgo y darle al analista contexto para decidir qué operaciones revisar primero.</p>
+      <h5>Implementación prevista</h5>
+      <p>Se validaría el modelo con operaciones históricas etiquetadas, separadas por fecha, y se ajustaría el umbral al volumen que puede revisar el equipo. La API correría en paralelo al proceso actual antes de intervenir en decisiones. El piloto mediría cuántos fraudes detecta y cuántas operaciones legítimas envía a revisión.</p>
+    </section>
+  </div>
 </article>
 <article class="case" id="trade">
   <div class="case-copy">
@@ -102,6 +137,23 @@
   <figcaption>Riesgo y decisión</figcaption>
 </figure>
 </div>
+  <div class="project-detail" data-project-tabs>
+    <div class="detail-tabs" data-tab-list hidden>
+      <button type="button" data-tab="overview">Sobre el proyecto</button>
+      <button type="button" data-tab="local">Leer más información</button>
+    </div>
+    <section class="detail-panel" id="trade-overview" data-panel="overview" aria-labelledby="trade-overview-title">
+      <h5 id="trade-overview-title">Alcance del proyecto</h5>
+      <p>La demo organiza la investigación en informes de fundamentos, señales técnicas, noticias y sentimiento. Un debate contrasta las hipótesis y la revisión de riesgo documenta la decisión y las dudas pendientes.</p>
+      <p>La evidencia disponible y las razones para descartar una hipótesis quedan registradas junto a la propuesta. La demostración usa datos sintéticos.</p>
+    </section>
+    <section class="detail-panel" id="trade-local" data-panel="local" aria-labelledby="trade-local-title">
+      <h5 id="trade-local-title">Beneficio potencial para Paraguay</h5>
+      <p>Podría servir en aulas universitarias y mesas de análisis paraguayas para comparar escenarios vinculados al tipo de cambio, las tasas o los sectores productivos mediante informes trazables.</p>
+      <h5>Implementación prevista</h5>
+      <p>El piloto empezaría con series públicas fechadas y casos preparados sobre guaraníes, dólar y variables sectoriales. Cada informe indicaría sus fuentes y pasaría por revisión humana. La primera entrega sería un informe de investigación para discusión, sin conexión con una plataforma de ejecución.</p>
+    </section>
+  </div>
 </article>
 <article class="case" id="cauce">
   <div class="case-copy">
@@ -129,6 +181,23 @@
   <figcaption>Libro mayor y auditoría</figcaption>
 </figure>
 </div>
+  <div class="project-detail" data-project-tabs>
+    <div class="detail-tabs" data-tab-list hidden>
+      <button type="button" data-tab="overview">Sobre el proyecto</button>
+      <button type="button" data-tab="local">Leer más información</button>
+    </div>
+    <section class="detail-panel" id="cauce-overview" data-panel="overview" aria-labelledby="cauce-overview-title">
+      <h5 id="cauce-overview-title">Alcance del proyecto</h5>
+      <p>El trabajo previo recorre tres momentos de una operación bancaria: el monitoreo, la revisión de una alerta y el registro de la resolución en el historial de auditoría.</p>
+      <p>La vista del caso reúne los datos de la operación y su impacto, para que operaciones pueda documentar qué decisión tomó, quién la revisó y cuándo quedó registrada.</p>
+    </section>
+    <section class="detail-panel" id="cauce-local" data-panel="local" aria-labelledby="cauce-local-title">
+      <h5 id="cauce-local-title">Beneficio potencial para Paraguay</h5>
+      <p>Una entidad financiera paraguaya podría usar el flujo para ordenar revisiones de transferencias en guaraníes y comprobar que cada resolución coincida con el movimiento registrado.</p>
+      <h5>Implementación prevista</h5>
+      <p>El piloto partiría de movimientos de prueba y un flujo de conciliación de solo lectura. Operaciones y auditoría definirían qué casos requieren una segunda aprobación. Se medirían el tiempo de resolución y la proporción de casos con expediente completo.</p>
+    </section>
+  </div>
 </article></div>
 </section>
 <section class="project-group" id="ciberseguridad" aria-labelledby="ciberseguridad-titulo">
@@ -159,6 +228,23 @@
   <figcaption>Revisión de parches</figcaption>
 </figure>
 </div>
+  <div class="project-detail" data-project-tabs>
+    <div class="detail-tabs" data-tab-list hidden>
+      <button type="button" data-tab="overview">Sobre el proyecto</button>
+      <button type="button" data-tab="local">Leer más información</button>
+    </div>
+    <section class="detail-panel" id="harmony-overview" data-panel="overview" aria-labelledby="harmony-overview-title">
+      <h5 id="harmony-overview-title">Alcance del proyecto</h5>
+      <p>El prototipo reúne servicios, repositorios y dependencias en un grafo. Los hallazgos se vinculan con los activos afectados, su responsable y la corrección propuesta.</p>
+      <p>La vista de revisión permite evaluar el cambio, dejar constancia de la decisión y coordinar con quien mantiene el servicio.</p>
+    </section>
+    <section class="detail-panel" id="harmony-local" data-panel="local" aria-labelledby="harmony-local-title">
+      <h5 id="harmony-local-title">Beneficio potencial para Paraguay</h5>
+      <p>Una institución, universidad o empresa de software en Paraguay podría identificar qué servicio depende de un activo desactualizado y a quién corresponde revisar el cambio.</p>
+      <h5>Implementación prevista</h5>
+      <p>El piloto usaría un inventario autorizado de un solo entorno con propietarios y dependencias confirmadas. Los hallazgos se importarían desde revisiones defensivas existentes y el responsable validaría la corrección antes de aplicarla. Se medirían la cobertura del inventario y el tiempo hasta la revisión.</p>
+    </section>
+  </div>
 </article>
 <article class="case" id="predator">
   <div class="case-copy">
@@ -186,6 +272,23 @@
   <figcaption>Informe de seguridad</figcaption>
 </figure>
 </div>
+  <div class="project-detail" data-project-tabs>
+    <div class="detail-tabs" data-tab-list hidden>
+      <button type="button" data-tab="overview">Sobre el proyecto</button>
+      <button type="button" data-tab="local">Leer más información</button>
+    </div>
+    <section class="detail-panel" id="predator-overview" data-panel="overview" aria-labelledby="predator-overview-title">
+      <h5 id="predator-overview-title">Alcance del proyecto</h5>
+      <p>El caso documenta una auditoría de código en un entorno de prueba. La sesión conserva el alcance, el registro de evidencias y un informe que describe el hallazgo, su impacto y la corrección propuesta.</p>
+      <p>La identificación del hallazgo permite encontrar su evidencia de respaldo y dejar constancia de la revisión posterior.</p>
+    </section>
+    <section class="detail-panel" id="predator-local" data-panel="local" aria-labelledby="predator-local-title">
+      <h5 id="predator-local-title">Beneficio potencial para Paraguay</h5>
+      <p>Las organizaciones paraguayas que encargan revisiones de aplicaciones podrían recibir informes comparables y seguir el estado de las correcciones entre versiones.</p>
+      <h5>Implementación prevista</h5>
+      <p>La primera implementación partiría de repositorios autorizados, un ambiente de prueba y reglas claras para resguardar la evidencia. Una persona revisaría el informe antes de compartirlo y el responsable del servicio confirmaría el cierre tras validar la corrección. Se medirían los hallazgos resueltos y los cierres con evidencia verificable.</p>
+    </section>
+  </div>
 </article></div>
 </section>
 <section class="project-group" id="personales" aria-labelledby="personales-titulo">
@@ -217,6 +320,23 @@
 </figure>
 </div>
   <div class="case-actions"><a class="button" href="demos.html#adoptame">Explorar demo</a></div>
+  <div class="project-detail" data-project-tabs>
+    <div class="detail-tabs" data-tab-list hidden>
+      <button type="button" data-tab="overview">Sobre el proyecto</button>
+      <button type="button" data-tab="local">Leer más información</button>
+    </div>
+    <section class="detail-panel" id="adoptame-overview" data-panel="overview" aria-labelledby="adoptame-overview-title">
+      <h5 id="adoptame-overview-title">Alcance del proyecto</h5>
+      <p>La demo incluye un catálogo por zona, fichas con información sobre los cuidados del animal y un formulario para publicar una adopción.</p>
+      <p>Cada ficha ayuda a comparar necesidades de cuidado y facilita que la persona interesada llegue a una solicitud con información suficiente.</p>
+    </section>
+    <section class="detail-panel" id="adoptame-local" data-panel="local" aria-labelledby="adoptame-local-title">
+      <h5 id="adoptame-local-title">Beneficio potencial para Paraguay</h5>
+      <p>Refugios, rescatistas y hogares temporales en Paraguay podrían reunir publicaciones dispersas y coordinar adopciones por municipio sin exponer domicilios particulares.</p>
+      <h5>Implementación prevista</h5>
+      <p>El piloto empezaría con refugios voluntarios en una zona, publicaciones moderadas y estados de disponibilidad. Las personas interesadas enviarían una solicitud que el refugio revisaría. Se medirían las fichas actualizadas, las solicitudes atendidas y las adopciones confirmadas.</p>
+    </section>
+  </div>
 </article>
 <article class="case" id="finanzas-personales">
   <div class="case-copy">
@@ -244,6 +364,23 @@
   <figcaption>Compra simulada en Wallet</figcaption>
 </figure>
 </div>
+  <div class="project-detail" data-project-tabs>
+    <div class="detail-tabs" data-tab-list hidden>
+      <button type="button" data-tab="overview">Sobre el proyecto</button>
+      <button type="button" data-tab="local">Leer más información</button>
+    </div>
+    <section class="detail-panel" id="finanzas-personales-overview" data-panel="overview" aria-labelledby="finanzas-personales-overview-title">
+      <h5 id="finanzas-personales-overview-title">Alcance del proyecto</h5>
+      <p>La demo móvil en React reúne balance, movimientos, presupuesto y metas de ahorro en guaraníes. La vista de Wallet usa un aviso simulado que se puede revisar antes de registrar la compra.</p>
+      <p>El flujo muestra cómo una compra modifica el presupuesto de su categoría y el saldo disponible.</p>
+    </section>
+    <section class="detail-panel" id="finanzas-personales-local" data-panel="local" aria-labelledby="finanzas-personales-local-title">
+      <h5 id="finanzas-personales-local-title">Beneficio potencial para Paraguay</h5>
+      <p>Personas que combinan efectivo, transferencias y tarjetas en Paraguay podrían consolidar sus gastos en guaraníes y entender cuánto les queda antes de fin de mes.</p>
+      <h5>Implementación prevista</h5>
+      <p>La primera versión priorizaría el registro manual y el guardado local, con categorías ajustables y exportación de movimientos. El aviso de ejemplo se mantendría simulado mientras se valida el flujo. El piloto observaría cuánto tarda registrar un gasto y con qué frecuencia se revisa el presupuesto.</p>
+    </section>
+  </div>
 </article></div>
 </section>
   <details class="archive">
@@ -272,10 +409,6 @@
 <article><p class="eyebrow">AWS · Mayo de 2025</p><h3>AWS Certified Solutions Architect – Professional</h3><a class="text-link" href="asset-aws.webp" data-gallery="certificados" data-label="AWS">Ver certificado</a></article>
 <article><p class="eyebrow">Google Cloud · Junio de 2025</p><h3>Professional Cloud Security Engineer</h3><a class="text-link" href="asset-google-cloud.webp" data-gallery="certificados" data-label="Google Cloud">Ver certificado</a></article>
 </div></section>
-<section id="contacto" class="section contact" aria-labelledby="contacto-titulo">
-  <h2 id="contacto-titulo">Propuestas y colaboraciones</h2>
-  <p>Escribime por el canal donde encontraste este portafolio.</p>
-</section>
 </main>
 <footer class="wrap footer"><strong>Diosnel Sanabria</strong><a href="#inicio">Volver al inicio</a></footer>
 <dialog id="viewer" aria-label="Galería ampliada"><div class="viewer-content"><div class="viewer-bar"><strong id="viewer-caption" aria-live="polite"></strong><button type="button" id="close-viewer">Cerrar</button></div><img id="viewer-image" alt=""><div class="viewer-controls"><button type="button" id="previous">Anterior</button><span id="viewer-count"></span><button type="button" id="next">Siguiente</button></div></div></dialog>
