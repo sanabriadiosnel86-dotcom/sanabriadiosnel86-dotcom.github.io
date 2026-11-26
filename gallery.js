@@ -41,21 +41,3 @@ dialog.addEventListener('keydown', (event) => {
 });
 dialog.addEventListener('close', () => opener?.focus());
 
-const area = document.querySelector('#adoption-area');
-const areaStatus = document.querySelector('#adoption-status');
-const pets = [...document.querySelectorAll('.sample-pet')];
-
-function filterPets() {
-  const selected = area.value;
-  let visible = 0;
-  for (const pet of pets) {
-    pet.hidden = selected !== '' && pet.dataset.area !== selected;
-    if (!pet.hidden) visible += 1;
-  }
-  const location = selected ? ` en ${selected}` : '';
-  areaStatus.textContent = visible === 0
-    ? `Todavía no hay perfiles de muestra${location}.`
-    : `${visible} ${visible === 1 ? 'perfil ficticio' : 'perfiles ficticios'}${location} en la demo.`;
-}
-area.addEventListener('change', filterPets);
-filterPets();
