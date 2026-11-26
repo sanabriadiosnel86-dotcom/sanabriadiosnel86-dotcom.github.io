@@ -104,16 +104,7 @@ h4 { font-size: clamp(25px, 3vw, 37px); }
 .case-copy p:last-child { color: var(--muted); margin: 10px 0 0; max-width: 65ch; }
 .case-actions { margin-top: auto; }
 .case-feature { background: var(--tint); }
-.case-flow {
-  display: grid;
-  gap: 6px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.case-flow li { display: grid; border: 1px solid var(--line); border-radius: 6px; padding: 8px 12px; background: var(--surface); }
-.case-flow strong { font-size: 15px; }
-.case-flow span, .screens figcaption { font-size: 14px; color: var(--muted); }
+.screens figcaption { font-size: 14px; color: var(--muted); }
 
 .screens { display: grid; align-items: start; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
 .screens figure { min-width: 0; }

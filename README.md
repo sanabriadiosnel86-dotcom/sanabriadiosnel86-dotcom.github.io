@@ -1,6 +1,6 @@
 # Portafolio de Diosnel Sanabria
 
-[Sitio publicado](https://sanabriadiosnel86-dotcom.github.io/) · [Perfil de GitHub](https://github.com/sanabriadiosnel86-dotcom)
+[Sitio publicado](https://sanabriadiosnel86-dotcom.github.io/)
 
 ## Finanzas
 
