@@ -42,7 +42,7 @@
   <div class="case-copy">
     <p class="eyebrow">Prevención de lavado</p>
     <h4>Rastro Financiero</h4>
-    <p>Seguimiento de operaciones inusuales, relaciones entre cuentas y decisiones de investigación.</p>
+    <p>Caso de estudio de prevención de lavado que combina detección transaccional, resolución de identidades e investigación con agentes de IA especializados.</p>
   </div>
   <figure>
     <a class="image-link" href="project-rastro-financiero.webp" data-gallery="rastro-financiero" data-label="Flujo de investigación" aria-label="Ampliar: flujo de investigación">
@@ -56,8 +56,16 @@
     </div>
     <section class="detail-panel" id="rastro-financiero-overview" data-panel="overview" aria-labelledby="rastro-financiero-overview-title">
       <h5 id="rastro-financiero-overview-title">Alcance del proyecto</h5>
-      <p>El caso de estudio sigue una alerta de prevención de lavado desde su detección hasta el cierre. La revisión vincula titulares, cuentas y contrapartes para ordenar las operaciones que requieren contexto adicional.</p>
-      <p>El resultado es un expediente con la relación entre entidades, los movimientos relevantes y el fundamento de la decisión del analista.</p>
+      <p>La parte multiagente prepara y revisa un expediente. Cada agente aporta evidencia o redacta una parte del análisis. Un analista de cumplimiento valida el resultado antes del cierre.</p>
+      <details class="project-flow">
+        <summary>Ver el flujo y sus componentes</summary>
+        <ul>
+          <li><strong>Detección</strong> Los movimientos se contrastan con el perfil del cliente, reglas y operaciones similares para priorizar alertas.</li>
+          <li><strong>Resolución de entidades</strong> La búsqueda por texto y similitud vectorial propone registros que podrían corresponder a la misma entidad. Los vínculos entre cuentas y contrapartes aportan contexto a la revisión.</li>
+          <li><strong>Investigación multiagente</strong> El agente de triaje reúne movimientos, identidades, relaciones y listas de vigilancia. El analista del caso examina vínculos y patrones temporales, y los subagentes profundizan en pistas concretas.</li>
+          <li><strong>Borrador y validación</strong> Un agente prepara el borrador del reporte. El control de calidad puede devolverlo para ajustes. La revisión humana determina qué se incorpora al expediente final.</li>
+        </ul>
+      </details>
     </section>
     <section class="detail-panel" id="rastro-financiero-local" data-panel="local" aria-labelledby="rastro-financiero-local-title">
       <h5 id="rastro-financiero-local-title">Beneficio potencial para Paraguay</h5>
@@ -71,7 +79,7 @@
   <div class="case-copy">
     <p class="eyebrow">Riesgo de fraude</p>
     <h4>Signal Desk</h4>
-    <p>Evaluación del riesgo por transacción con XGBoost, explicaciones SHAP y consulta de resultados por API.</p>
+    <p>Demo de riesgo de fraude con agentes de detección, investigación y decisión. La vista reúne el puntaje, su explicación y el resultado de la política.</p>
   </div>
   <div class="screens">
 <figure>
@@ -100,8 +108,16 @@
     </div>
     <section class="detail-panel" id="signal-overview" data-panel="overview" aria-labelledby="signal-overview-title">
       <h5 id="signal-overview-title">Alcance del proyecto</h5>
-      <p>La demo parte de una transacción, estima su riesgo con XGBoost y usa SHAP para destacar las variables que más influyeron en esa estimación. El panel y la API muestran la puntuación y su explicación.</p>
-      <p>La salida permite revisar por qué una operación se priorizó y registrar si la alerta aporta valor al análisis.</p>
+      <p>La arquitectura separa la predicción de la interpretación. Así el analista puede ver qué señales influyeron en el puntaje y cómo se llegó al estado de la operación.</p>
+      <details class="project-flow">
+        <summary>Ver el flujo y sus componentes</summary>
+        <ul>
+          <li><strong>Detección</strong> El agente de detección usa XGBoost para estimar el riesgo según variables de la operación y su historial.</li>
+          <li><strong>Explicación e investigación</strong> SHAP muestra cuánto aportó cada variable al puntaje del modelo. El agente de investigación usa un modelo de lenguaje para resumir esas señales para el analista.</li>
+          <li><strong>Decisión</strong> El agente de decisión aplica la política de fraude y devuelve un estado de aprobación, investigación o bloqueo. La captura de ejemplo devuelve INVESTIGATE.</li>
+          <li><strong>Consulta</strong> El panel en Streamlit muestra la evaluación. La API en FastAPI recibe la consulta mediante POST /predict_fraud y devuelve el resultado para revisión o integración.</li>
+        </ul>
+      </details>
     </section>
     <section class="detail-panel" id="signal-local" data-panel="local" aria-labelledby="signal-local-title">
       <h5 id="signal-local-title">Beneficio potencial para Paraguay</h5>
@@ -115,7 +131,7 @@
   <div class="case-copy">
     <p class="eyebrow">Investigación de mercados</p>
     <h4>Trade Agents</h4>
-    <p>Demo de análisis de mercados que reúne informes, contrasta hipótesis y documenta una decisión de riesgo con datos sintéticos.</p>
+    <p>Demo de un enjambre de IA para investigación de mercados. Distintos agentes reúnen evidencia, debaten escenarios y documentan una decisión con datos sintéticos.</p>
   </div>
   <div class="screens">
 <figure>
@@ -144,8 +160,16 @@
     </div>
     <section class="detail-panel" id="trade-overview" data-panel="overview" aria-labelledby="trade-overview-title">
       <h5 id="trade-overview-title">Alcance del proyecto</h5>
-      <p>La demo organiza la investigación en informes de fundamentos, señales técnicas, noticias y sentimiento. Un debate contrasta las hipótesis y la revisión de riesgo documenta la decisión y las dudas pendientes.</p>
-      <p>La evidencia disponible y las razones para descartar una hipótesis quedan registradas junto a la propuesta. La demostración usa datos sintéticos.</p>
+      <p>El flujo que representa la demo está organizado por roles y coordinado mediante LangGraph. La entrega es un registro de investigación y de sus supuestos para revisión.</p>
+      <details class="project-flow">
+        <summary>Ver el flujo y sus componentes</summary>
+        <ul>
+          <li><strong>Analistas especializados</strong> Los analistas fundamental, técnico, de noticias y de sentimiento preparan informes independientes a partir de distintas fuentes.</li>
+          <li><strong>Debate</strong> Los investigadores alcista y bajista contrastan sus argumentos y señalan qué evidencias faltan o se contradicen.</li>
+          <li><strong>Propuesta</strong> El agente operador convierte el debate en una propuesta simulada y deja constancia de las razones que la sustentan.</li>
+          <li><strong>Riesgo y cierre</strong> Los agentes de riesgo revisan la exposición y pueden devolver la propuesta para ajustes. El rol de gestión de cartera registra la decisión final de la simulación.</li>
+        </ul>
+      </details>
     </section>
     <section class="detail-panel" id="trade-local" data-panel="local" aria-labelledby="trade-local-title">
       <h5 id="trade-local-title">Beneficio potencial para Paraguay</h5>
@@ -159,7 +183,7 @@
   <div class="case-copy">
     <p class="eyebrow">Operaciones bancarias</p>
     <h4>Cauce</h4>
-    <p>Trabajo previo sobre monitoreo de operaciones, investigación de alertas y registro de decisiones para auditoría.</p>
+    <p>Demo de protección bancaria que conecta alertas de transferencias, revisión de comprobantes y contabilidad de partida doble.</p>
   </div>
   <div class="screens">
 <figure>
@@ -188,8 +212,16 @@
     </div>
     <section class="detail-panel" id="cauce-overview" data-panel="overview" aria-labelledby="cauce-overview-title">
       <h5 id="cauce-overview-title">Alcance del proyecto</h5>
-      <p>El trabajo previo recorre tres momentos de una operación bancaria: el monitoreo, la revisión de una alerta y el registro de la resolución en el historial de auditoría.</p>
-      <p>La vista del caso reúne los datos de la operación y su impacto, para que operaciones pueda documentar qué decisión tomó, quién la revisó y cuándo quedó registrada.</p>
+      <p>El caso simula una transferencia de ₲ 18.640.000. La revisión separa la detección de riesgo, el cotejo documental y la decisión supervisada.</p>
+      <details class="project-flow">
+        <summary>Ver el flujo y sus componentes</summary>
+        <ul>
+          <li><strong>Monitoreo</strong> El movimiento TX-7612 genera una alerta por un importe atípico y un beneficiario nuevo. Queda retenido para revisión en el caso de prueba.</li>
+          <li><strong>Cotejo documental</strong> El reconocimiento óptico de caracteres (OCR) extrae datos del comprobante. El analista contrasta una diferencia de ₲ 180.000 y verifica el destino contra la evidencia.</li>
+          <li><strong>Doble control</strong> Una persona prepara el expediente y otra decide sobre la liberación de la operación. El historial conserva las acciones y las personas responsables.</li>
+          <li><strong>Libro mayor</strong> El ejemplo muestra los débitos y créditos del mismo movimiento y el control que evita contabilizarlo dos veces.</li>
+        </ul>
+      </details>
     </section>
     <section class="detail-panel" id="cauce-local" data-panel="local" aria-labelledby="cauce-local-title">
       <h5 id="cauce-local-title">Beneficio potencial para Paraguay</h5>
@@ -206,7 +238,7 @@
   <div class="case-copy">
     <p class="eyebrow">Gestión de hallazgos</p>
     <h4>Harmony</h4>
-    <p>Prototipo para visualizar relaciones entre activos, priorizar hallazgos y revisar las correcciones propuestas.</p>
+    <p>Prototipo de gestión de hallazgos con un enjambre de IA, grafo de activos y aprobación humana para las correcciones.</p>
   </div>
   <div class="screens">
 <figure>
@@ -235,8 +267,15 @@
     </div>
     <section class="detail-panel" id="harmony-overview" data-panel="overview" aria-labelledby="harmony-overview-title">
       <h5 id="harmony-overview-title">Alcance del proyecto</h5>
-      <p>El prototipo reúne servicios, repositorios y dependencias en un grafo. Los hallazgos se vinculan con los activos afectados, su responsable y la corrección propuesta.</p>
-      <p>La vista de revisión permite evaluar el cambio, dejar constancia de la decisión y coordinar con quien mantiene el servicio.</p>
+      <p>Las pantallas representan cómo un agente coordinador y varios especialistas pueden repartir la revisión de activos autorizados y reunir sus observaciones en una sola ficha de trabajo.</p>
+      <details class="project-flow">
+        <summary>Ver el flujo y sus componentes</summary>
+        <ul>
+          <li><strong>Inventario</strong> El grafo conecta servicios, repositorios y dependencias con sus responsables. La vista permite entender qué activos se podrían ver afectados por un cambio.</li>
+          <li><strong>Revisión colaborativa</strong> El coordinador reúne observaciones sobre contexto, evidencia y prioridad. Las contribuciones de los especialistas permiten comparar hallazgos antes de derivarlos al responsable.</li>
+          <li><strong>Corrección propuesta</strong> La ficha reúne el cambio sugerido, los activos afectados y las pruebas previstas. La persona responsable revisa la propuesta y deja constancia de su decisión.</li>
+        </ul>
+      </details>
     </section>
     <section class="detail-panel" id="harmony-local" data-panel="local" aria-labelledby="harmony-local-title">
       <h5 id="harmony-local-title">Beneficio potencial para Paraguay</h5>
@@ -250,7 +289,7 @@
   <div class="case-copy">
     <p class="eyebrow">Auditoría de aplicaciones</p>
     <h4>Predator</h4>
-    <p>Caso de auditoría de código en un entorno de prueba, con registro de evidencias y un informe de hallazgos.</p>
+    <p>Demostración de auditoría de código de caja blanca con un enjambre de IA y registro de evidencias.</p>
   </div>
   <div class="screens">
 <figure>
@@ -279,8 +318,15 @@
     </div>
     <section class="detail-panel" id="predator-overview" data-panel="overview" aria-labelledby="predator-overview-title">
       <h5 id="predator-overview-title">Alcance del proyecto</h5>
-      <p>El caso documenta una auditoría de código en un entorno de prueba. La sesión conserva el alcance, el registro de evidencias y un informe que describe el hallazgo, su impacto y la corrección propuesta.</p>
-      <p>La identificación del hallazgo permite encontrar su evidencia de respaldo y dejar constancia de la revisión posterior.</p>
+      <p>El caso ilustra cómo se documenta una auditoría con acceso autorizado al código. La terminal, el registro de evidencias y el informe son tres vistas de la misma sesión.</p>
+      <details class="project-flow">
+        <summary>Ver el flujo y sus componentes</summary>
+        <ul>
+          <li><strong>Alcance de la sesión</strong> La ficha identifica el repositorio de prueba, el entorno y el control de seguridad que se revisa.</li>
+          <li><strong>Roles de revisión</strong> El diseño multiagente reparte la lectura del código, la organización de evidencias y la redacción del informe entre especialistas.</li>
+          <li><strong>Hallazgo y seguimiento</strong> El informe describe el impacto observado, la corrección propuesta y el estado de revisión posterior. La evidencia se vincula a un identificador de hallazgo.</li>
+        </ul>
+      </details>
     </section>
     <section class="detail-panel" id="predator-local" data-panel="local" aria-labelledby="predator-local-title">
       <h5 id="predator-local-title">Beneficio potencial para Paraguay</h5>
@@ -297,7 +343,7 @@
   <div class="case-copy">
     <p class="eyebrow">Adopción de mascotas</p>
     <h4>Adoptame.py</h4>
-    <p>Catálogo de mascotas en Paraguay con filtros por zona, fichas de adopción y un formulario de publicación.</p>
+    <p>Catálogo de adopción de mascotas en Paraguay con filtros por zona, fichas de cuidado y formulario de publicación.</p>
   </div>
   <div class="screens">
 <figure>
@@ -327,8 +373,15 @@
     </div>
     <section class="detail-panel" id="adoptame-overview" data-panel="overview" aria-labelledby="adoptame-overview-title">
       <h5 id="adoptame-overview-title">Alcance del proyecto</h5>
-      <p>La demo incluye un catálogo por zona, fichas con información sobre los cuidados del animal y un formulario para publicar una adopción.</p>
-      <p>Cada ficha ayuda a comparar necesidades de cuidado y facilita que la persona interesada llegue a una solicitud con información suficiente.</p>
+      <p>La demo muestra el recorrido de una persona que busca adoptar y el de quien publica una mascota. Cada ficha reúne fotos, ubicación general y necesidades de cuidado.</p>
+      <details class="project-flow">
+        <summary>Ver el flujo y sus componentes</summary>
+        <ul>
+          <li><strong>Búsqueda</strong> Los filtros ayudan a encontrar mascotas por zona y recorrer las fichas disponibles.</li>
+          <li><strong>Ficha</strong> La vista individual presenta las características y los cuidados de la mascota para que la persona pueda evaluar si su hogar es adecuado.</li>
+          <li><strong>Publicación</strong> El formulario reúne los datos de la mascota y sus fotos. El flujo de piloto contempla moderación y seguimiento de la disponibilidad con los refugios.</li>
+        </ul>
+      </details>
     </section>
     <section class="detail-panel" id="adoptame-local" data-panel="local" aria-labelledby="adoptame-local-title">
       <h5 id="adoptame-local-title">Beneficio potencial para Paraguay</h5>
@@ -342,7 +395,7 @@
   <div class="case-copy">
     <p class="eyebrow">Presupuesto en guaraníes</p>
     <h4>Finanzas personales</h4>
-    <p>Demo móvil en React para registrar gastos, planificar ahorros y revisar un aviso de compra simulado de Wallet.</p>
+    <p>Demo móvil en React para seguir gastos, presupuestos y metas de ahorro en guaraníes.</p>
   </div>
   <div class="screens screens-phone">
 <figure>
@@ -371,8 +424,16 @@
     </div>
     <section class="detail-panel" id="finanzas-personales-overview" data-panel="overview" aria-labelledby="finanzas-personales-overview-title">
       <h5 id="finanzas-personales-overview-title">Alcance del proyecto</h5>
-      <p>La demo móvil en React reúne balance, movimientos, presupuesto y metas de ahorro en guaraníes. La vista de Wallet usa un aviso simulado que se puede revisar antes de registrar la compra.</p>
-      <p>El flujo muestra cómo una compra modifica el presupuesto de su categoría y el saldo disponible.</p>
+      <p>La interfaz reúne cinco vistas de trabajo y muestra cómo un gasto modifica el saldo y el presupuesto de su categoría. Los avisos de compra de Wallet se simulan en la demo.</p>
+      <details class="project-flow">
+        <summary>Ver el flujo y sus componentes</summary>
+        <ul>
+          <li><strong>Inicio y Plan</strong> Inicio muestra el balance y los movimientos recientes. Plan reúne el presupuesto por categoría y las metas de ahorro.</li>
+          <li><strong>Registro</strong> El flujo incorpora gastos en efectivo o con tarjeta y permite revisar el importe y la categoría antes de guardarlos.</li>
+          <li><strong>Estadísticas</strong> La vista agrupa gastos por categoría para comparar en qué se concentra el consumo.</li>
+          <li><strong>Wallet</strong> Un aviso simulado de Apple Pay o Google Wallet pasa a una vista de revisión. La persona decide si confirma el registro del gasto.</li>
+        </ul>
+      </details>
     </section>
     <section class="detail-panel" id="finanzas-personales-local" data-panel="local" aria-labelledby="finanzas-personales-local-title">
       <h5 id="finanzas-personales-local-title">Beneficio potencial para Paraguay</h5>
